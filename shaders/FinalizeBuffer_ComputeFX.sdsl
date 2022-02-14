@@ -1,0 +1,22 @@
+// Bakeing SDF using ComputeShader from AMD TressFX : https://github.com/GPUOpen-Effects/TressFX/
+// Copyright (c) 2019 Advanced Micro Devices, Inc. All rights reserved.
+
+shader FinalizeBuffer_ComputeFX : ComputeShaderBase, SdfUtils
+{
+    cbuffer PerDispatch
+    {
+        stage RWTexture3D<float> SDFTexture;
+    }
+
+    override void Compute()
+    {
+        uint3 cellIndex = streams.DispatchThreadId.xyz;
+
+        if(cellIndex.x >= (uint)cellCount.x
+            || cellIndex.y >= (uint)cellCount.y
+            || cellIndex.z >= (uint)cellCount.z) return;
+
+        uint dist = SDFBuffer[GetSdfCellIndex(cellIndex)];
+        SDFTexture[cellIndex] = asfloat(IFloatFlip3(dist));
+    }
+};

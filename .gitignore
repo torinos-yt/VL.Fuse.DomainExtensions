@@ -1,0 +1,14 @@
+# editor
+.vs
+.vscode
+
+# dotnet
+*.deps.json
+*.pdb
+/src/lib
+/src/obj
+/src/bin
+
+# VL Assembly
+VL*.dll
+!VL.OpenEXR.dll

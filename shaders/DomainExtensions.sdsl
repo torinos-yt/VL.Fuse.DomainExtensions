@@ -1,0 +1,76 @@
+shader DomainExtensions : ShaderUtils
+{
+    //---- Log Polar Repeat ---//
+    float3 LogPolarRepeatXY(float3 pos, float div, float2 offset, out float scale, out float2 cell)
+    {
+        float2 p = pos.xy;
+        p = LogPolarRepeat(p, div, offset, scale, cell);
+        return float3(p.x, p.y, pos.z / scale);
+    }
+
+    float3 LogPolarRepeatXZ(float3 pos, float div, float2 offset, out float scale, out float2 cell)
+    {
+        float2 p = pos.xz;
+        p = LogPolarRepeat(p, div, offset, scale, cell);
+        return float3(p.x, pos.y / scale, p.y);
+    }
+
+    float3 LogPolarRepeatYZ(float3 pos, float div, float2 offset, out float scale, out float2 cell)
+    {
+        float2 p = pos.yz;
+        p = LogPolarRepeat(p, div, offset, scale, cell);
+        return float3( pos.x / scale, p.x, p.y);
+    }
+
+    float2 LogPolar(float2 uv)
+    {
+        return float2(log(length(uv)), atan2(uv.y, uv.x));
+    }
+
+    // https://www.osar.fr/notes/logspherical/
+    float2 LogPolarRepeat(float2 p, float div, float2 offset, out float scale, out float2 cell)
+    {
+        scale = 0.;
+        cell = (0.).xx;
+
+        float r = length(p);
+        // Apply the forward log-polar map
+        p = LogPolar(p * 1.5) + offset;
+
+        float polarScale = div/Pi;
+        
+        // Scale everything so tiles will fit nicely in the ]-pi,pi] interval
+        p *= polarScale;
+
+        // Convert pos to single-tile coordinates
+        float2 ret = ceil(p);
+        // p.y += ret.x*polarScale;
+        p = frac(p) - 0.5;
+
+        scale = r/polarScale;
+        cell = ret;
+
+        return p;
+    }
+
+
+    //--- Stereographic Transform ---//
+    void pR(inout float2 p, float a) 
+    {
+        a*=Pi;
+        p = p*cos(a) + float2(p.y, -p.x)*sin(a);
+    }
+
+    // mla https://www.shadertoy.com/view/lsGyzm
+    float4 InverseStereographic(float3 p)
+    {
+        float k = 2.0/(1.0+dot(p,p));
+        return float4(p*k,k-1.0);
+    }
+    
+    float3 Stereographic(float4 p4)
+    {
+        float k = 1.0/(1.0+p4.w);
+        return p4.xyz*k;
+    }
+};
