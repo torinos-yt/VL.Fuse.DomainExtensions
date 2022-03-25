@@ -3044,7 +3044,6 @@
                 <Pin Id="HXhfUFxB8J7O2VEAi1ysT4" Name="Original Shader Source" Kind="OutputPin" />
                 <Pin Id="Q3zd6SR3invLTBQkhy8jNY" Name="Shader Code" Kind="OutputPin" />
               </Node>
-              <ControlPoint Id="DXHRmViPBVeLPJNJxidHNa" Bounds="828,176" />
               <ControlPoint Id="UYGqmOuqf3kQKShRcn0Q2V" Bounds="616,554" />
               <Node Bounds="498,243,65,19" Id="T3JzR4tsAQyN9PAetMd7PV">
                 <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
@@ -3056,7 +3055,7 @@
                 <Pin Id="QgW8zXtdsPtLHZ9JnutXmB" Name="Not Assigned" Kind="OutputPin" />
               </Node>
               <ControlPoint Id="LsKYa53quEZQcztV1KLaQT" Bounds="791,409" />
-              <ControlPoint Id="BTfazZFlX2LO4lcQyr0A3n" Bounds="771,135" />
+              <ControlPoint Id="BTfazZFlX2LO4lcQyr0A3n" Bounds="767,164" />
               <Node Bounds="693,263,65,19" Id="Mplt4RT52CoObQui5an6r1">
                 <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -3118,7 +3117,7 @@
                 <ControlPoint Id="UhrFn3fZQGHMKl4X3gz4HB" Bounds="572,289" Alignment="Top" />
                 <ControlPoint Id="QUNQ7LUQirzQTLFPj0UdYg" Bounds="572,343" Alignment="Bottom" />
               </Node>
-              <Pad Id="S7yzLKMjzYJNwEgm9JWp8p" Comment="uv" Bounds="572,224" isIOBox="true" />
+              <ControlPoint Id="Mr8TPLfqhZyN8ut2F0Z8aI" Bounds="891,217" />
             </Canvas>
             <ProcessDefinition Id="FrRi7oGJKNlM3bUXkU1CpW">
               <Fragment Id="IyyFIWv3IZbMIN0ljY1mFL" Patch="N3nJR6VAB3lQZWNmZXYt7a" Enabled="true" />
@@ -3130,7 +3129,6 @@
             <Link Id="GQp5fUHtXl1N0acYhKAsyD" Ids="I2wIMMlyfbALurnZX7ZKOe,VHYabvrYH3OPvOHmcZsxAY" />
             <Link Id="VpfDCdt1fZ3L5xuuL8dn8k" Ids="EBOdjHSDOn9Mo9ixur2H6s,I2wIMMlyfbALurnZX7ZKOe" IsHidden="true" />
             <Link Id="LqVqaOV7vFjNGNwcYZKcCP" Ids="OjiLxx9WWuFOLrWX2TjCXT,AhhunO8IMKyNoIrrySDgux" />
-            <Link Id="FjSYJEN6gAJOhvgAznxm73" Ids="HHxCXq0T0JpMTNqDXkZCDo,DXHRmViPBVeLPJNJxidHNa" IsHidden="true" />
             <Link Id="HEPbFXw42y2N8Ai6ClSaxv" Ids="Sn3VTZh93AqMwBIuIAHHLi,UYGqmOuqf3kQKShRcn0Q2V" />
             <Link Id="RYbbqA3NckeMKcLXXONSfa" Ids="UYGqmOuqf3kQKShRcn0Q2V,ERzajQCJFz6MZJbrqWrCJT" IsHidden="true" />
             <Link Id="KhiVEkf6EZGLm2FSEWToMt" Ids="LsKYa53quEZQcztV1KLaQT,Rp86LwF1WnPPWIBh3FfIEj" />
@@ -3146,18 +3144,18 @@
             <Link Id="Fe6T3tARLEMMuH3C6glq3p" Ids="UhrFn3fZQGHMKl4X3gz4HB,QUNQ7LUQirzQTLFPj0UdYg" IsFeedback="true" />
             <Link Id="NYvnFGvDtkKORf0X4OLLxj" Ids="Dk4TYFlRDrwL88urojNojX,QUNQ7LUQirzQTLFPj0UdYg" />
             <Link Id="LwaeNsTh3zlNfqukjdcUaq" Ids="QUNQ7LUQirzQTLFPj0UdYg,FV1onppCqCKPljRlAIx66P" />
-            <Link Id="AGy83YzcJEUPRFSbPVYEpL" Ids="DXHRmViPBVeLPJNJxidHNa,S7yzLKMjzYJNwEgm9JWp8p" />
-            <Link Id="T9hOeRXksQNPFuaKdcoS8U" Ids="S7yzLKMjzYJNwEgm9JWp8p,KPo1ac8eF5VPHX0ZurdNAx" />
-            <Link Id="M6WKDTjypK2M4hU9q4qakO" Ids="S7yzLKMjzYJNwEgm9JWp8p,UhrFn3fZQGHMKl4X3gz4HB" />
             <Patch Id="N3nJR6VAB3lQZWNmZXYt7a" Name="Create" />
             <Patch Id="IKkwhcZX9wYMrLsezPzper" Name="Update">
               <Pin Id="EBOdjHSDOn9Mo9ixur2H6s" Name="Material" Kind="InputPin" Bounds="594,321" />
               <Pin Id="JNNEEHPWjeaLgAC7Xq6wWg" Name="Normal Map" Kind="InputPin" Bounds="749,294" />
               <Pin Id="MJdXdln9KrVMgP1P2JV1sO" Name="Normal Sampler" Kind="InputPin" Bounds="747,209" Visibility="Optional" />
               <Pin Id="VZQWFJUnRHjQbyUFzUsSox" Name="Strength" Kind="InputPin" Bounds="843,359" />
-              <Pin Id="HHxCXq0T0JpMTNqDXkZCDo" Name="uv" Kind="InputPin" Bounds="771,258" />
               <Pin Id="ERzajQCJFz6MZJbrqWrCJT" Name="Output" Kind="OutputPin" Bounds="627,574" />
+              <Pin Id="O4Umz0UznwoLWwz1Ja0xgx" Name="uv" Kind="InputPin" Bounds="853,182" />
             </Patch>
+            <Link Id="SmO0Ejv44CfN6z1pcUCPKv" Ids="Mr8TPLfqhZyN8ut2F0Z8aI,UhrFn3fZQGHMKl4X3gz4HB" />
+            <Link Id="HwayFqDO68RM5qTNcwopjD" Ids="O4Umz0UznwoLWwz1Ja0xgx,Mr8TPLfqhZyN8ut2F0Z8aI" IsHidden="true" />
+            <Link Id="M0e5Lc2rglNPNmQIZNBYLN" Ids="Mr8TPLfqhZyN8ut2F0Z8aI,KPo1ac8eF5VPHX0ZurdNAx" />
           </Patch>
         </Node>
       </Canvas>
