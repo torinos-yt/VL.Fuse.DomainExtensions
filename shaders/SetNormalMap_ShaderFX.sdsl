@@ -19,18 +19,19 @@ shader SetNormalMap_ShaderFX : ShadingBase, ShaderBaseStream, PositionStream4, N
 
     stage float4 StrideShadingWorldNormal(float3 worldPos, float3 normal)
     {
-        float3 bumpsNormal = NormalMap.Sample(LinearSampler, Provider.Compute()).xyz;
+        float2 uv = Provider.Compute();
+        float3 bumpsNormal = NormalMap.Sample(LinearSampler, uv).xyz;
 
-        float3 p_dx = ddx(streams.PositionWS);
-        float3 p_dy = ddy(streams.PositionWS);
+        float3 p_dx = ddx(worldPos);
+        float3 p_dy = ddy(worldPos);
 
-        float2 tc_dx = ddx(streams.TexCoord);
-        float2 tc_dy = ddy(streams.TexCoord);
+        float2 tc_dx = ddx(uv);
+        float2 tc_dy = ddy(uv);
 
         float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );
         float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); 
 
-        float3 n = normalize(streams.normalWS);
+        float3 n = normalize(normal);
         float3 x = cross(n, t);
         t = cross(x, n);
         t = normalize(t);
