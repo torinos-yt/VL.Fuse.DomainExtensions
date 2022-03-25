@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="ApNvuml4ArLMxSOvRSmuEV" LanguageVersion="2021.4.5.764" Version="0.128">
+<Document xmlns:p="property" Id="ApNvuml4ArLMxSOvRSmuEV" LanguageVersion="2021.4.7.906" Version="0.128">
   <Patch Id="SvrmDZOxKEoPRH8m2350Cx">
     <Canvas Id="Fq9FUVZWqtAQXEFrIUxt1b" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -24,6 +24,7 @@
             <Pin Id="Gw1C8zuq4h3LplnGKI5CPw" Name="Margin Scale" Kind="InputPin" />
             <Pin Id="NvvrIv4HzjcLqaIFAu6RPN" Name="Resolution" Kind="InputPin" />
             <Pin Id="CzdnSuKtU79OGEWFvTiMja" Name="Transform" Kind="InputPin" />
+            <Pin Id="URB34XheybzQGFFpDu4ITx" Name="Repeat" Kind="InputPin" DefaultValue="True" />
             <Pin Id="MA1eRoWRBNBQNqmk19v2PX" Name="Force" Kind="InputPin" />
             <Pin Id="JxBD2WRH3JhOqnE2uW8hq3" Name="Output" Kind="OutputPin" />
           </Node>
@@ -57,6 +58,7 @@
               <Choice Kind="ProcessAppFlag" Name="RayMarch (Basic)" />
             </p:NodeReference>
             <Pin Id="ECrbbOWt01vMq8IIY7HMFY" Name="SDF~" Kind="InputPin" />
+            <Pin Id="FWEigQjRaVbQFg2hqfQJU3" Name="AutoCompile" Kind="InputPin" />
             <Pin Id="GZNZlZh5zfLLE6DHlLshKb" Name="Max Iterations" Kind="InputPin" />
             <Pin Id="JxSHI4yqExFMEsgMAEts8A" Name="Color" Kind="InputPin" />
             <Pin Id="LwEJf3a1KLdL2yCfAtqlEK" Name="Bounding Box Position" Kind="InputPin" />
@@ -95,13 +97,22 @@
             <Pin Id="P0UUJpoGaWcMjqGlACdgfs" Name="Enabled" Kind="InputPin" />
             <Pin Id="Qda1MqKnntWMKIqdTsWK9z" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="DihIIaLjrRrPGyCytRi7qt" Comment="Force" Bounds="567,419,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="DihIIaLjrRrPGyCytRi7qt" Comment="Force" Bounds="614,431,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation>
               <Choice Kind="TypeFlag" Name="Boolean" />
               <FullNameCategoryReference ID="Primitive" />
             </p:TypeAnnotation>
             <p:ValueBoxSettings>
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="LT4ylcwSF51QYzaiuwvxhw" Comment="Repeat" Bounds="561,411,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation>
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
         </Canvas>
@@ -119,11 +130,12 @@
         <Link Id="P0NZQYIQnyOO23cjqjgQcb" Ids="JxBD2WRH3JhOqnE2uW8hq3,RZdknTw4NzdPZOIwInKTLu" />
         <Patch Id="UxheK0cFj2WNhDd7fEZFTK" Name="Create" />
         <Patch Id="Izk4rUsXb8GNJTqoBdon74" Name="Update" />
+        <Link Id="QHtUQ1HvDkoPcBbDy8d95s" Ids="LT4ylcwSF51QYzaiuwvxhw,URB34XheybzQGFFpDu4ITx" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="OPDm4EGDFizNY4kS6OsMFr" Location="VL.CoreLib" Version="2021.4.5" />
-  <NugetDependency Id="Ix7Bi8hSUIFMLsdj96jABM" Location="VL.Stride" Version="2021.4.5" />
-  <NugetDependency Id="NEXx4Y1QFcWOPVhc6vF2q3" Location="VL.Fuse" Version="0.1.6" />
+  <NugetDependency Id="OPDm4EGDFizNY4kS6OsMFr" Location="VL.CoreLib" Version="2021.4.7" />
+  <NugetDependency Id="Ix7Bi8hSUIFMLsdj96jABM" Location="VL.Stride" Version="2021.4.7" />
+  <NugetDependency Id="NEXx4Y1QFcWOPVhc6vF2q3" Location="VL.Fuse" Version="0.1.9" />
   <NugetDependency Id="QpOz6l8ezV2L7KY3PWqFAt" Location="VL.Fuse.DomainExtensions" Version="0.0.0.0" />
 </Document>
